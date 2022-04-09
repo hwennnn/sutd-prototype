@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}Search.io{% endblock %} {% block head
+%} {{ super() }} {% endblock %}
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<body>
+  {% block body %}
+  <div class="container-fluid">
+    <h1 class="text-center">Results</h1>
+  </div>
+
+  <p></p>
+  <div class="card-deck">
+    {% for item in res%}
+    <div class="col-lg-4 col-md-6 mb-4 product">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{item.title}} ({{item.similarity}}%)</h5>
+          <h6 class="card-subtitle mb-2">{{item.desc}}</h6>
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  {% endblock %}
+</body>

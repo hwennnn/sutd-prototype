@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block title %}Search.io{% endblock %} {% block head
+%} {{ super() }} {% endblock %}
+
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
+  rel="stylesheet"
+/>
+
+<body>
+  {% block body %}
+  <main class="container">
+    <h1
+      style="font-family: 'Roboto Mono', monospace; color: dodgerblue"
+      class="text-center"
+    >
+      Welcome To Search.io
+    </h1>
+    <p></p>
+
+    <div id="cover">
+      <form method="POST" action="results">
+        <div class="tb">
+          <div class="td">
+            <input
+              name="item"
+              type="text"
+              placeholder="Search"
+              value=""
+              required
+            />
+          </div>
+          <div class="td" id="s-cover">
+            <button type="submit">
+              <div id="s-circle"></div>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  {% endblock %}
+</body>
